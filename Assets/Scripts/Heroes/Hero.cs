@@ -16,7 +16,7 @@ public abstract class Hero : MonoBehaviour
 
     protected void MoveToTarget()
     {
-        
+        // if (Boss.)
     }
     protected void Action()
     {
