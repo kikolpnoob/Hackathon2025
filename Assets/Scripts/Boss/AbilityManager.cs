@@ -9,7 +9,11 @@ public class AbilityManager : MonoBehaviour
 
     public int mana;
     public int maxMana;
+
+    public Rigidbody2D rb;
+    public Transform transform;
     
+
     private void Update()
     {
         if (ownedAbilities.Count > 0)
@@ -39,5 +43,6 @@ public class AbilityManager : MonoBehaviour
             }
         }
     }
+    
     
 }
