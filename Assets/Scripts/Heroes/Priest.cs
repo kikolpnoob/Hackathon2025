@@ -17,6 +17,10 @@ public class Priest : Hero
         isUsingAction = true;
         StartCoroutine(Shoot());
     }
+    void FixedUpdate()
+    {
+        UpdateLogic();
+    }
 
     private IEnumerator Shoot()
     {
