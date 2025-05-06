@@ -11,5 +11,7 @@ public class DashAbility : Ability
         base.UseAbility();
         
         rb.linearVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * dashVel;
+        
+        Debug.Log( new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * dashVel);
     } 
 }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60de6414e8acc8f42abf0e69084f3ba1, type: 3}
   m_Name: Ability
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Dash
+  description: ...
   manaCost: 0
   isActive: 0
-  rb: {fileID: 0}
-  dashVel: 0
+  rb: {fileID: 3849536361918299361, guid: ea875bb1918131d4f80fef8fd4da93f3, type: 3}
+  dashVel: 500

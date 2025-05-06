@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b20f6bb-994d-4ddd-ae8d-c08e1d629859" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Ability 1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Ability 1.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hackathon2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hackathon2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boss/AbilityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boss/AbilityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boss/Boss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boss/Boss.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ability.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ability.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Boss - Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Boss - Testing.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boss/Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boss/Ability.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boss/DashAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boss/DashAbility.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
