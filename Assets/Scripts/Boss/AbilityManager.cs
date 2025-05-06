@@ -4,45 +4,53 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
+    [System.Serializable]
+    struct AbilityParams
+    {
+        public Rigidbody2D bossRigidbody;
+        public BossDamageOnContact bossDamageOnContact;
+        public Collider2D bossCollider;
+        public Movement playerMovement;
+    }
+    [SerializeField] AbilityParams abilityParams;
     public List<Ability> ownedAbilities = new List<Ability>();
     public List<Ability> allAbilities = new List<Ability>();
 
-    public int mana;
+    public float mana;
     public int maxMana;
 
-    public Rigidbody2D rb;
-    public Transform transform;
-    
+    private void Awake()
+    {
+        foreach (Ability ability in allAbilities)
+        {
+            if (ability is DashAbility dashAbility)
+            {
+                dashAbility.rigidBody = abilityParams.bossRigidbody;
+                dashAbility.damageOnContact = abilityParams.bossDamageOnContact;
+                dashAbility.movement = abilityParams.playerMovement;
+                dashAbility.bossCollider = abilityParams.bossCollider;
+            }
+        }
+
+        ownedAbilities[0] = allAbilities[0];
+    }
+
 
     private void Update()
     {
-        if (ownedAbilities.Count > 0)
+        mana = Mathf.Clamp(mana + Time.deltaTime * 10, 0, maxMana);
+        for (int i = 0; i < 3; i++)
         {
-            if ( Input.GetKeyDown((KeyCode.Alpha1)) && mana >= ownedAbilities[0].manaCost)
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                mana -= ownedAbilities[0].manaCost;
-                ownedAbilities[0].UseAbility();
-            }
-        }
-        
-        if (ownedAbilities.Count > 1)
-        {
-            if ( Input.GetKeyDown((KeyCode.Alpha1)) && mana >= ownedAbilities[1].manaCost)
-            {
-                mana -= ownedAbilities[1].manaCost;
-                ownedAbilities[1].UseAbility();
-            }
-        }
-        
-        if (ownedAbilities.Count > 2)
-        {
-            if ( Input.GetKeyDown((KeyCode.Alpha1)) && mana >= ownedAbilities[2].manaCost)
-            {
-                mana -= ownedAbilities[2].manaCost;
-                ownedAbilities[2].UseAbility();
+                CheckAbilityActivation(i);
             }
         }
     }
-    
-    
+
+    private void CheckAbilityActivation(int i)
+    {
+        if (ownedAbilities.Count > i && ownedAbilities[i] != null && mana > ownedAbilities[i].manaCost)
+            ownedAbilities[i].UseAbility();
+    }
 }
