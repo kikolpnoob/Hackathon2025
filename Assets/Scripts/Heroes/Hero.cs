@@ -16,10 +16,15 @@ public abstract class Hero : MonoBehaviour
 
     protected void MoveToTarget()
     {
-        // if (Boss.)
+        if (Boss.Transform = )
     }
     protected void Action()
     {
 
+    }
+
+    public void EditHealth(int value)
+    {
+        // TODO: health stuff
     }
 }
