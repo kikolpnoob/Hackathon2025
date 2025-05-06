@@ -252,9 +252,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   laserLength: 100
-  damagePerTick: 5
+  damagePerTick: 20
   isFiring: 0
-  duration: 0.5
+  duration: 1
 --- !u!120 &2569142402368534041
 LineRenderer:
   serializedVersion: 2
