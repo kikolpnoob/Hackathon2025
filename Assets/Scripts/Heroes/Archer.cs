@@ -21,7 +21,6 @@ public class Archer : Hero
     void FixedUpdate()
     {
         UpdateLogic();
-        animator.PlayAnimation("Walk");
     }
 
     private IEnumerator Shoot()
