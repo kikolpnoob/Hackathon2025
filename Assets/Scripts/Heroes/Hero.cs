@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -30,7 +31,9 @@ public abstract class Hero : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void FixedUpdate() { }
+
+    protected virtual void UpdateLogic()
     {
         if (isUsingAction)
             return;
@@ -43,8 +46,7 @@ public abstract class Hero : MonoBehaviour
         MoveToPreferredDistance();
     }
 
-
-    protected void MoveToPreferredDistance()
+    protected virtual void MoveToPreferredDistance()
     {
         float dist = _distanceFromPlayer;
         if (dist < minDistanceFromPlayer)

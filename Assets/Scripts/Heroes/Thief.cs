@@ -2,10 +2,10 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Archer : Hero
+public class Thief : Hero
 {
     public int damage;
-    public LayerMask bossMask;
+    public LayerMask heroMask;
     public Projectile arrow;
     public float arrowSpeed;
     public float swingSelfKnockback;
@@ -28,7 +28,7 @@ public class Archer : Hero
         Vector2 shootPosition = (Vector2)transform.position + bossDirection;
         yield return new WaitForSeconds(0.3f);
         Projectile projectile = Instantiate(arrow, shootPosition, Quaternion.LookRotation(-Vector3.forward, bossDirection));
-        projectile.layerMask = bossMask;
+        projectile.layerMask = heroMask;
         projectile.damage = damage;
         projectile.speed = arrowSpeed;
 

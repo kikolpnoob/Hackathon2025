@@ -8,12 +8,22 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public float speed;
     [HideInInspector] public int damage;
     Rigidbody2D rb;
+    public float maxLifeTime = 10.0f;
+    float lifeTime;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         rb.linearVelocity = transform.up * speed;
+    }
+
+    void Update()
+    {
+        lifeTime += Time.deltaTime;
+        if (lifeTime > maxLifeTime)
+            Destroy(gameObject);
     }
 
 
