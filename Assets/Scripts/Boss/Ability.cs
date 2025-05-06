@@ -7,5 +7,9 @@ public class Ability
     public string description;
     public int manaCost;
     public bool isActive;
-    public virtual void UseAbility() { }
+
+    public virtual void UseAbility()
+    {
+        
+    }
 }
