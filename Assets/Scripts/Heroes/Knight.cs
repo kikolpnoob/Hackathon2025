@@ -20,6 +20,11 @@ public class Knight : Hero
         StartCoroutine(Swing());
     }
 
+    void FixedUpdate()
+    {
+        UpdateLogic();
+    }
+
     private IEnumerator Swing()
     {
         Vector2 swingDirection = (Boss.Transform.position - transform.position).normalized;
