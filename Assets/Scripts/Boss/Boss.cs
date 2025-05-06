@@ -1,5 +1,8 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
+
+
 
 public class Boss : MonoBehaviour
 {
@@ -10,7 +13,6 @@ public class Boss : MonoBehaviour
     public static Transform Transform;
     
     public float meeleAttackRadius;
-    public Vector2 hitDirection;
     public LayerMask enemyLayerMask;
     
     public int damage; // TODO: ...
@@ -32,19 +34,18 @@ public class Boss : MonoBehaviour
     {
         if (!CanAttack)
         {
-            while (timer < delay)
+            timer += Time.deltaTime;
+
+            if (timer >= delay)
             {
-                timer += Time.deltaTime;
+                CanAttack = true;
+                timer = 0;
             }
-            
-            CanAttack = true;
-            timer = 0;
         }
         
         if (Input.GetMouseButtonDown(0) && CanAttack)
         {
             enemies = Physics2D.OverlapCircleAll(GetSwingPosition(), meeleAttackRadius, enemyLayerMask); // Toto nejde ... stale to je null
-            Debug.Log("ADD");
             CanAttack = false;
             if (enemies != null)
             {
@@ -64,5 +65,11 @@ public class Boss : MonoBehaviour
     public Vector2 GetSwingPosition()
     {
         return (Vector2)transform.position + (GetMousePosition() - (Vector2)transform.position).normalized;
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Handles.color = Color.red;
+        Handles.DrawWireDisc(GetSwingPosition(), Vector3.forward, meeleAttackRadius);
     }
 }
