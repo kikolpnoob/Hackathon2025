@@ -55,11 +55,12 @@ public class LaserBeamController : MonoBehaviour
 
         foreach (RaycastHit2D hit in hits)
         {
-            Hero hp = hit.collider.GetComponent<Hero>();
+            //TODO deal damage 
+            /*Hero hp = hit.collider.GetComponent<Hero>();
             if (hp != null)
             {
                 hp.EditHealth(damagePerTick);
-            }
+            }*/
         }
     }
 
