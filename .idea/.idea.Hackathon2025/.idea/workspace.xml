@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b20f6bb-994d-4ddd-ae8d-c08e1d629859" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png.meta" afterDir="false" />
@@ -382,6 +383,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Animations/Archer.controller.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Animations/Dead.anim.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Animations/Idle.anim.meta" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hackathon2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hackathon2025/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 11d81a3a9f86061c4f1fb5ba7d5d85d386e84f05
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Buttons/Sliced/buttons_1x_sliced.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Buttons/Sliced/buttons_1x_sliced.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Buttons/Sliced/buttons_2x_sliced.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Buttons/Sliced/buttons_2x_sliced.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Buttons/Sliced/buttons_4x_sliced.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Buttons/Sliced/buttons_4x_sliced.png.meta" afterDir="false" />
@@ -395,8 +399,23 @@
       <change beforePath="$PROJECT_DIR$/Assets/Assets/GUI/Sliced/GUI_4x_sliced.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/GUI/Sliced/GUI_4x_sliced.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprite-0001.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Sprite-0001.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprite-00549.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Sprite-00549.png.meta" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuControler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuControler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs.meta" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Attack01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Attack01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Attack02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Attack02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Attack03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Attack03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Block.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Block.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Death.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Hurt.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Hurt.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Idle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight/Knight-Walk.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Heroes/Archer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Heroes/Archer.cs" afterDir="false" />
+>>>>>>> 11d81a3a9f86061c4f1fb5ba7d5d85d386e84f05
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
