@@ -4,17 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b20f6bb-994d-4ddd-ae8d-c08e1d629859" name="Changes" comment="" />
+    <list default="true" id="8b20f6bb-994d-4ddd-ae8d-c08e1d629859" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SummonMinions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SummonMinions.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/kikolpnoob/Hackathon2025.git",
+    "accountId": "ed35d21b-eb23-4a00-aadf-cb561f3b2115"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "git-widget-placeholder": "main",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
