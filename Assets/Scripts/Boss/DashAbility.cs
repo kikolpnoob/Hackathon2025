@@ -10,8 +10,18 @@ public class DashAbility : Ability
     {
         base.UseAbility();
         
-        rb.linearVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * dashVel;
+        rb.linearVelocity = GetMouseDirection() * dashVel;
         
-        Debug.Log( new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * dashVel);
-    } 
+        Debug.Log(GetMouseDirection() * dashVel);
+    }
+
+    public Vector2 GetMousePosition()
+    {
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    public Vector2 GetMouseDirection()
+    {
+        return (GetMousePosition() - (Vector2)Boss.Transform.position).normalized;
+    }
 }

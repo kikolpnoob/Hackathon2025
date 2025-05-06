@@ -19,8 +19,7 @@ public abstract class Hero : MonoBehaviour
     public bool isUsingAction;
 
     public float actionStaminaCost;
-    [Tooltip("100 stamina per second")]
-        int maxStamina = 100;
+    // 100 stamina regen per second
     [Header("Hero specific values")]
     float _stamina;
 
@@ -35,8 +34,8 @@ public abstract class Hero : MonoBehaviour
     {
         if (isUsingAction)
             return;
-        _stamina = Mathf.Clamp(_stamina + Time.fixedDeltaTime * 100, 0, maxStamina);
-        if (_stamina > actionStaminaCost && isIdealDistance)
+        _stamina = Mathf.Clamp(_stamina + Time.fixedDeltaTime * 100, float.MaxValue, 0);
+        if (Mathf.Approximately(_stamina, 0) && isIdealDistance)
         {
             Action();
             _stamina -= actionStaminaCost;
