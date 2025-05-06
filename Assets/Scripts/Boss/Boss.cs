@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class Boss : MonoBehaviour
 {
-    public int health;
+    int health;
     public int maxHealth;
     public int xp;
     public int mana;
@@ -28,6 +28,7 @@ public class Boss : MonoBehaviour
     private void Start()
     {
         Transform = transform;
+        health = maxHealth;
     }
     
     private void Update()
@@ -52,7 +53,7 @@ public class Boss : MonoBehaviour
                 foreach (Collider2D enemy in enemies)
                 {
                     //TODO: Ubere Demage 
-                    Debug.Log("Uberam damage");
+                    enemy.GetComponentInParent<Hero>().EditHealth(-damage);
                 }
             }
         }

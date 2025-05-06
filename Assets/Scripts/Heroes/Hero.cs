@@ -1,8 +1,9 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public abstract class Hero : MonoBehaviour
 {
-    public int health;
+    [HideInInspector] public int health;
     public int maxHealth;
     public float movementSpeed;
 
@@ -13,22 +14,34 @@ public abstract class Hero : MonoBehaviour
 
     protected float _distanceFromPlayer { get { return Vector2.Distance(Boss.Transform.position, transform.position); } }
     protected Vector2 _directionToPlayer { get { return (Boss.Transform.position - transform.position).normalized; } }
-    private Rigidbody rb;
+    protected Rigidbody2D rb;
 
-    public float maxStamina;
+    public bool isUsingAction;
+
     public float actionStaminaCost;
+    [Tooltip("100 stamina per second")]
+        int maxStamina = 100;
     [Header("Hero specific values")]
-    private float _stamina;
+    float _stamina;
 
+
+    void Awake()
+    {
+        health = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void FixedUpdate()
     {
-        _stamina = Mathf.Clamp(_stamina + Time.fixedDeltaTime, 0, maxStamina);
+        if (isUsingAction)
+            return;
+        _stamina = Mathf.Clamp(_stamina + Time.fixedDeltaTime * 100, 0, maxStamina);
         if (_stamina > actionStaminaCost && isIdealDistance)
         {
             Action();
             _stamina -= actionStaminaCost;
         }
+        MoveToPreferredDistance();
     }
 
 
@@ -49,6 +62,7 @@ public abstract class Hero : MonoBehaviour
     {
         health = Mathf.Clamp(health + value, 0, maxHealth);
 
+        Debug.Log(health);
         if (health == 0)
             Destroy(gameObject); // gameOver
     }
