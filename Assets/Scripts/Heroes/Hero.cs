@@ -64,6 +64,6 @@ public abstract class Hero : MonoBehaviour
 
         Debug.Log(health);
         if (health == 0)
-            Destroy(gameObject); // gameOver
+            Destroy(gameObject);
     }
 }

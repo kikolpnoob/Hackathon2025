@@ -74,4 +74,13 @@ public class Boss : MonoBehaviour
         Handles.color = Color.red;
         Handles.DrawWireDisc(GetSwingPosition(), Vector3.forward, meeleAttackRadius);
     }
+
+    public void EditHealth(int value)
+    {
+        health = Mathf.Clamp(health + value, 0, maxHealth);
+
+        Debug.Log(health);
+        if (health == 0)
+            Destroy(gameObject); // gameOver
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Knight : Hero
 {
-    public float damage;
+    public int damage;
     public LayerMask bossMask;
     [Tooltip("Radius of the damage collider")]
         public Vector2 swingSize;
@@ -28,8 +28,8 @@ public class Knight : Hero
         Collider2D col = Physics2D.OverlapBox(swingPosition, swingSize, Vector2.Angle(Vector2.up, swingDirection), bossMask);
         if (col != null)
         {
-            // col.GetComponentInParent<Boss>().EditHealth(-damage);
-            Debug.Log("Hit da boss");
+            col.GetComponentInParent<Boss>().EditHealth(-damage);
+            // Debug.Log("Hit da boss");
         }
         rb.AddForce(-swingDirection * swingSelfKnockback * rb.mass, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.4f);
