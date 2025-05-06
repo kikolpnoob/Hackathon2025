@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[System.Serializable]
-public class Ability
+public class Ability : ScriptableObject
 {
     public string name;
     public string description;
@@ -10,6 +9,6 @@ public class Ability
 
     public virtual void UseAbility()
     {
-        
+        // Tu niečo bude...
     }
 }
