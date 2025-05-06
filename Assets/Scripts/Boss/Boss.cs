@@ -1,7 +1,12 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour { // Coded by kiko
+public class Boss : MonoBehaviour { // Coded by kiko
+
+    public Transform Transform;
+    public static Transform userTransform;
     
     [Header("Speed")]
     public float speedOfMovement = 5.0f; 
@@ -19,9 +24,13 @@ public class PlayerMovement : MonoBehaviour { // Coded by kiko
     [Header("Other")]
     public Rigidbody2D rigidBody; // Fyzika telesa (bude sa cez to interagovať s hráčom)
     private Vector2 movement; // Smer pohybu
-    
 
-    
+
+    private void Awake()
+    {
+        userTransform = Transform;
+    }
+
     void Start() {
         aktualStamina = maxStamina;
         aktualSpeed = speedOfMovement;
