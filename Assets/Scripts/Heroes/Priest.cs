@@ -63,11 +63,11 @@ public class Priest : Hero
         }
         else
         {
-            float dist = Vector2.Distance(Boss.Transform.position, transform.position);
+            float distan = Vector2.Distance(Boss.Transform.position, transform.position);
             
-            if (dist < minDistanceFromPlayer)
+            if (distan < minDistanceFromPlayer)
                 rb.AddForce(-_directionToPlayer * movementSpeed * rb.mass);
-            else if (dist > maxDistanceFromPlayer)
+            else if (distan > maxDistanceFromPlayer)
                 rb.AddForce(_directionToPlayer * movementSpeed * rb.mass);
         }
         
