@@ -5,6 +5,7 @@ public class DashAbility : Ability
 {
     public Rigidbody2D rb;
     public float dashVel;
+    
     public override void UseAbility()
     {
         base.UseAbility();

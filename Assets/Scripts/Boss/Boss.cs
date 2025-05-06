@@ -9,8 +9,6 @@ public class Boss : MonoBehaviour
     int health;
     public int maxHealth;
     public int xp;
-    public int maxMana;
-    float mana;
     public static Transform Transform;
     
     public float meeleAttackRadius;
