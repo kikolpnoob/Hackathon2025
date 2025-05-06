@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Dash
   description: ...
-  manaCost: 0
+  manaCost: 10
   isActive: 0
-  rb: {fileID: 3849536361918299361, guid: ea875bb1918131d4f80fef8fd4da93f3, type: 3}
-  dashVel: 500
+  rigidBody: {fileID: 0}
+  damageOnContact: {fileID: 0}
+  dashVel: 40
+  damage: 50
+  damageDuration: 0.2

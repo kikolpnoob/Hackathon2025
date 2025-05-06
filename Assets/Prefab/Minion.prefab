@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4fc83e35095aa4a9ee1b2e29e300ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
   Range: 6.19
   stopDistance: 1.15
   enemyMask:

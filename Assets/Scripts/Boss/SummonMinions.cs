@@ -10,6 +10,6 @@ public class SummonMinions : Ability
 
         Object.Instantiate(MinionPrefab, Boss.Transform.position, Quaternion.identity);
     }
-    
+
     
 }
