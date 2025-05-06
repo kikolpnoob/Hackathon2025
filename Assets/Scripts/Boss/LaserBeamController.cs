@@ -9,6 +9,7 @@ public class LaserBeamController : MonoBehaviour
     public bool isFiring = false;
     public float duration = 0.5f;
     private float timer;
+    private float tickTimer;
 
     private Vector3 laserDirection;
 
@@ -43,24 +44,29 @@ public class LaserBeamController : MonoBehaviour
         }
 
         Vector3 start = transform.position;
-        
+
 
         // 1. Draw beam
         linRen.SetPosition(0, start);
         linRen.SetPosition(1, start + laserDirection * laserLength);
         linRen.enabled = true;
 
+        tickTimer -= Time.fixedDeltaTime;
+        if (tickTimer > 0)
+        {
+            return;
+        }
+        tickTimer += 0.1f;
         // 2. Hit everything on the laser path
         RaycastHit2D[] hits = Physics2D.RaycastAll(start, laserDirection, laserLength, hitLayers);
 
         foreach (RaycastHit2D hit in hits)
         {
-            //TODO deal damage 
-            /*Hero hp = hit.collider.GetComponent<Hero>();
+            Hero hp = hit.collider.GetComponentInParent<Hero>();
             if (hp != null)
             {
-                hp.EditHealth(damagePerTick);
-            }*/
+                hp.EditHealth(-damagePerTick);
+            }
         }
     }
 

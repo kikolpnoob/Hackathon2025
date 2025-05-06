@@ -11,6 +11,7 @@ public class AbilityManager : MonoBehaviour
         public BossDamageOnContact bossDamageOnContact;
         public Collider2D bossCollider;
         public Movement playerMovement;
+        public LaserBeamController laserBeamController;
     }
     [SerializeField] AbilityParams abilityParams;
     public List<Ability> ownedAbilities = new List<Ability>();
@@ -25,14 +26,20 @@ public class AbilityManager : MonoBehaviour
         {
             if (ability is DashAbility dashAbility)
             {
-                dashAbility.rigidBody = abilityParams.bossRigidbody;
-                dashAbility.damageOnContact = abilityParams.bossDamageOnContact;
-                dashAbility.movement = abilityParams.playerMovement;
-                dashAbility.bossCollider = abilityParams.bossCollider;
+                dashAbility.rigidBody           = abilityParams.bossRigidbody;
+                dashAbility.damageOnContact     = abilityParams.bossDamageOnContact;
+                dashAbility.movement            = abilityParams.playerMovement;
+                dashAbility.bossCollider        = abilityParams.bossCollider;
+            }
+            if (ability is LaserAbility laserAbility)
+            {
+                laserAbility.laserBeam          = abilityParams.laserBeamController;
             }
         }
 
-        ownedAbilities[0] = allAbilities[0];
+        if (ownedAbilities == null)
+            ownedAbilities = new List<Ability>();
+        ownedAbilities.Add(allAbilities[0]);
     }
 
 
