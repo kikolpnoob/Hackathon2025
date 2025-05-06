@@ -8,6 +8,8 @@ public abstract class Hero : MonoBehaviour
     public float minDistanceFromPlayer;
     public float maxDistanceFromPlayer;
 
+    private Rigidbody rb;
+
     [Header("Hero specific values")]
     private float stamina;
 
@@ -18,6 +20,6 @@ public abstract class Hero : MonoBehaviour
     }
     protected void Action()
     {
-        
+
     }
 }
