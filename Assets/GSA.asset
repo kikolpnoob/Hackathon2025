@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   description: 
-  manaCost: 0
+  manaCost: 50
   isActive: 0

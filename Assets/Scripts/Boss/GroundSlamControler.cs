@@ -2,36 +2,37 @@ using UnityEngine;
 
 public class GroundSlamControler : MonoBehaviour
 {
-    public float GroundSlamRadius;
+    public float GroundSlamRadius = 3f;
     public LayerMask enemyLayerMask;
+    public int damage = 20;
 
-    public int damage;
-    public Collider2D[] enemies;
     private bool CanAttack = false;
 
-
-    void Start()
-    {
-
-    }
+    public ParticleSystem groundSlamParticles;
 
     void Update()
     {
         if (CanAttack)
         {
-            enemies = Physics2D.OverlapCircleAll(GetSwingPosition(), GroundSlamRadius, enemyLayerMask); // Toto nejde ... stale to je null
-            CanAttack = false;
-            if (enemies != null)
+
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, GroundSlamRadius, enemyLayerMask);
+            groundSlamParticles.Play();
+
+            //Debug.Log($"Ground slam at {transform.position}, found {enemies.Length} enemies.");
+
+            foreach (Collider2D enemy in enemies)
             {
-                foreach (Collider2D enemy in enemies)
+                Hero hero = enemy.GetComponentInParent<Hero>();
+                if (hero != null)
                 {
-                    Debug.Log("deal damage to ");
-                    enemy.GetComponentInParent<Hero>().EditHealth(-damage);
+                    hero.EditHealth(-damage);
+                    Debug.Log("Dealt damage WITH Slam to: " + hero.name);
                 }
             }
+
+            CanAttack = false;
         }
     }
-
 
     public void StartGroundSlam()
     {
@@ -42,14 +43,10 @@ public class GroundSlamControler : MonoBehaviour
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
-    public Vector2 GetSwingPosition()
-    {
-        return (Vector2)transform.position + (GetMousePosition() - (Vector2)transform.position).normalized;
-    }
-    /*private void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.blue;
-        Handles.DrawWireDisc(GetSwingPosition(), Vector3.forward, GroundSlamRadius);
-    }*/
-}
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, GroundSlamRadius);
+    }
+}

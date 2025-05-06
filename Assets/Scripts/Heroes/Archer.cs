@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Archer : Hero
 {
+    public SpriteAnimator animator;
     public int damage;
     public LayerMask bossMask;
     public Projectile arrow;
@@ -20,6 +21,7 @@ public class Archer : Hero
     void FixedUpdate()
     {
         UpdateLogic();
+        animator.PlayAnimation("Walk");
     }
 
     private IEnumerator Shoot()
