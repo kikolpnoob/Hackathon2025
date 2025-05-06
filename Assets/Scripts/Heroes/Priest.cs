@@ -1,39 +1,78 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Priest : Hero
 {
-    public int damage;
-    public LayerMask heroMask;
-    public Projectile arrow;
-    public float arrowSpeed;
-    public float swingSelfKnockback;
+    public int healAmount;
+    private Hero NearestHero;
 
 
-    protected override void Action()
+    protected override void Action() 
     {
         base.Action();
         isUsingAction = true;
-        StartCoroutine(Shoot());
+        Heal(); 
+
     }
+
+    private void Heal()
+    {
+        if (NearestHero != null)
+            NearestHero.EditHealth(healAmount);
+        
+        isUsingAction = false;
+    }
+
     void FixedUpdate()
     {
         UpdateLogic();
     }
 
-    private IEnumerator Shoot()
+    protected override void UpdateLogic()
     {
-        Vector2 bossDirection = (Boss.Transform.position - transform.position).normalized;
-        Vector2 shootPosition = (Vector2)transform.position + bossDirection;
-        yield return new WaitForSeconds(0.3f);
-        Projectile projectile = Instantiate(arrow, shootPosition, Quaternion.LookRotation(-Vector3.forward, bossDirection));
-        projectile.layerMask = heroMask;
-        projectile.damage = damage;
-        projectile.speed = arrowSpeed;
-
-        rb.AddForce(-bossDirection * swingSelfKnockback * rb.mass, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.4f);
-        isUsingAction = false;
+        base.UpdateLogic();
     }
+
+    protected override void MoveToPreferredDistance()
+    {
+        NearestHero = null;
+        float nearestAllyDistance = float.MaxValue;
+        Vector2 directionToNearestAlly = Vector2.zero; 
+   
+        foreach (Hero ally in PriestFindAlly.Allies)
+        {
+            if (ally ==null) continue;
+            
+            float allyDistance = Vector2.Distance(transform.position, ally.transform.position);
+            if (allyDistance < nearestAllyDistance)
+            {
+                nearestAllyDistance = allyDistance;
+                NearestHero = ally;
+                directionToNearestAlly = (ally.transform.position - transform.position).normalized;
+            }
+        }
+        
+        if (NearestHero != null)
+        {
+            if (nearestAllyDistance < minDistanceFromPlayer)
+                rb.AddForce(-directionToNearestAlly * movementSpeed * rb.mass);
+            else if (nearestAllyDistance > maxDistanceFromPlayer)
+                rb.AddForce(directionToNearestAlly * movementSpeed * rb.mass);  
+        }
+        else
+        {
+            float dist = Vector2.Distance(Boss.Transform.position, transform.position);
+            
+            if (dist < minDistanceFromPlayer)
+                rb.AddForce(-_directionToPlayer * movementSpeed * rb.mass);
+            else if (dist > maxDistanceFromPlayer)
+                rb.AddForce(_directionToPlayer * movementSpeed * rb.mass);
+        }
+        
+
+    }
+    
+  
 }
