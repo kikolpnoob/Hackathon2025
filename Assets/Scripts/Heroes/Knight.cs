@@ -31,8 +31,8 @@ public class Knight : Hero
             // col.GetComponentInParent<Boss>().EditHealth(-damage);
             Debug.Log("Hit da boss");
         }
+        rb.AddForce(-swingDirection * swingSelfKnockback * rb.mass, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.4f);
         isUsingAction = false;
-        rb.AddForce(-swingDirection * swingSelfKnockback, ForceMode2D.Impulse);
     }
 }

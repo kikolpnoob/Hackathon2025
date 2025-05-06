@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Hero : MonoBehaviour
 {
-    [HideInInspector] public int health;
+    int health;
     public int maxHealth;
     public float movementSpeed;
 
